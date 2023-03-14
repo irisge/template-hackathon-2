@@ -1,4 +1,5 @@
-import React, { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -10,7 +11,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import User from './pages/User';
 import UserDetails from './pages/UserDetails';
 import UserHome from './pages/UserHome';
-import UsersList from './pages/UsersList';
+// import UsersList from './pages/UsersList';
 
 function App() {
   const { user } = useAuthContext();
@@ -28,7 +29,7 @@ function App() {
             <Route index element={<UserHome />} />
             <Route path="details" element={<UserDetails />} />
           </Route>
-          <Route
+          {/* <Route
             element={
               <ProtectedRoute
                 isAllowed={user.roles.includes('admin')}
@@ -37,7 +38,7 @@ function App() {
             }
           >
             <Route path="users-list" element={<UsersList />} />
-          </Route>
+          </Route> */}
         </Route>
       </Routes>
     </BrowserRouter>
