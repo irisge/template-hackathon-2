@@ -1,16 +1,16 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
-import MovieList from "./pages/MovieList";
-import Header from "./components/Header";
-import { useAuthContext } from "./contexts/authContext";
-import ProtectedRoute from "./components/ProtectedRoute";
-import User from "./pages/User";
-import UserDetails from "./pages/UserDetails";
-import UserHome from "./pages/UserHome";
-import UsersList from "./pages/UsersList";
+import Home from './pages/Home';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import MovieList from './pages/MovieList';
+import Header from './components/Header';
+import { useAuthContext } from './contexts/authContext';
+import ProtectedRoute from './components/ProtectedRoute';
+import User from './pages/User';
+import UserDetails from './pages/UserDetails';
+import UserHome from './pages/UserHome';
+import UsersList from './pages/UsersList';
 
 function App() {
   const { user } = useAuthContext();
@@ -31,7 +31,7 @@ function App() {
           <Route
             element={
               <ProtectedRoute
-                isAllowed={user.roles.includes("admin")}
+                isAllowed={user.roles.includes('admin')}
                 redirectPath="/user"
               />
             }
